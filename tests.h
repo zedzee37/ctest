@@ -27,11 +27,11 @@ typedef enum {
 	} while(0);\
 	switch (case_status) {\
 		case FAILURE:\
-			printf(CLR_RED CLR_BOLD "	( %s ) failed (%d/%d)\n" CLR_RESET, test_name, test_case_name, assert_pass_count, assertion_count);\
+			printf(CLR_RED CLR_BOLD "	( %s ) failed (%d/%d)\n" CLR_RESET, test_case_name, assert_pass_count, assertion_count);\
 			status = FAILURE;\
 			break;\
 		case PASS:\
-			printf(CLR_GREEN CLR_BOLD "	( %s ) passed\n" CLR_RESET, test_name, test_case_name);\
+			printf(CLR_GREEN CLR_BOLD "	( %s ) passed\n" CLR_RESET, test_case_name);\
 			pass_count++;\
 			break;\
 	}
@@ -74,11 +74,11 @@ typedef enum {
 	assertion_count++;\
 	if (result) {\
 		if (!silent) {\
-			printf(CLR_GREEN "		-- Assertion %s passed\n" CLR_RESET, test_name, test_case_name, STRINGIFY(condition));\
+			printf(CLR_GREEN "		-- Assertion %s passed\n" CLR_RESET, STRINGIFY(condition));\
 		}\
 		assert_pass_count++;\
 	} else {\
-		printf(CLR_RED "		-- Assertion %s failed: %s\n" CLR_RESET, test_name, test_case_name, STRINGIFY(condition), message);\
+		printf(CLR_RED "		-- Assertion %s failed: %s\n" CLR_RESET, STRINGIFY(condition), message);\
 		case_status = FAILURE;\
 	}
 #define ASSERT(condition, message) _ASSERT(condition, message, 1);
