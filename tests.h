@@ -21,7 +21,7 @@ typedef enum {
 	assertion_count = 0;\
 	assert_pass_count = 0;\
 	case_count++;\
-	printf(CLR_BOLD "\n	( %s ) \n" CLR_RESET, test_name, test_case_name);\
+	printf(CLR_BOLD "\n	( %s ) \n" CLR_RESET, test_case_name);\
 	do {\
 		block\
 	} while(0);\
