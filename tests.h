@@ -81,7 +81,7 @@ typedef enum {
 		printf(CLR_RED "		-- Assertion %s failed: %s\n" CLR_RESET, STRINGIFY(condition), message);\
 		case_status = FAILURE;\
 	}
-#define ASSERT(condition, message) _ASSERT(condition, message, 1);
-#define ASSERT_SILENT(condition, message) _ASSERT(condition, message, 0);
+#define ASSERT(condition, message) _ASSERT(condition, message, 0);
+#define ASSERT_SILENT(condition, message) _ASSERT(condition, message, 1);
 
 #endif
